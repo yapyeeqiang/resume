@@ -1,0 +1,167 @@
+{
+    "basics": {
+        "name": "Yap Yee Qiang",
+        "picture": "https://yeeqiang.me/avatar.jpeg",
+        "label": "Software Developer",
+        "headline": "Do what you love, not what others love.",
+        "summary": "My name is Yap Yee Qiang, A tech enthusiast and an educator believes that everyone can be a self-taught developer.",
+        "website": "https://yeeqiang.me",
+        "projects_url": "https://yeeqiang.me/projects",
+        "username": "yapyeeqiang",
+        "email": "yapyeeqiang@gmail.com",
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "yapyeeqiang",
+                "url": "https://yeeqiang.me/github"
+            },
+            {
+                "network": "LinkedIn",
+                "url": "https://yeeqiang.me/linkedin",
+                "username": "yapyeeqiang"
+            },
+            {
+                "network": "Twitter",
+                "url": "https://yeeqiang.me/twitter",
+                "username": "yapyeeqiang"
+            },
+            {
+                "network": "Instagram",
+                "username": "yapyeeqiang",
+                "url": "https://yeeqiang.me/instagram"
+            },
+            {
+                "network": "Portfolio",
+                "username": "yeeqiang.me",
+                "url": "https://yeeqiang.me"
+            }
+        ]
+    },
+    "skills": [
+        {
+            "keywords": ["Typescript", "Javascript", "Vue", "React"],
+            "level": "Intermediate",
+            "name": "Frontend"
+        },
+        {
+            "keywords": ["Node", "SQLite", "GraphQL"],
+            "level": "Intermediate",
+            "name": "Backend"
+        },
+        {
+            "keywords": ["Firebase", "AWS", "Google Cloud"],
+            "level": "Intermediate",
+            "name": "DevOps"
+        },
+        {
+            "keywords": ["Python", "Go", "JavaScript"],
+            "level": "Intermediate",
+            "name": "Languages"
+        }
+    ],
+    "projects": [
+        {
+            "name": "i18n-ally",
+            "displayName": "i18n Ally",
+            "summary": "All in one i18n extension for VS Code",
+            "website": "https://marketplace.visualstudio.com/items?itemName=antfu.i18n-ally",
+            "githubUrl": "https://github.com/antfu/i18n-ally",
+            "primaryLanguage": "TypeScript"
+        },
+        {
+            "name": "WhatsApp Sender",
+            "displayName": "WhatsApp Sender",
+            "summary": "Whatsapp messages bulk sender using Python Selenium.",
+            "website": "https://github.com/yapyeeqiang/whatsapp-sender",
+            "githubUrl": "https://github.com/yapyeeqiang/whatsapp-sender",
+            "primaryLanguage": "Python"
+        }
+    ],
+    "work": [
+        {
+            "company": "Sigma School",
+            "position": "Programme Lead",
+            "website": "https://sigmaschool.co/",
+            "location": "Malaysia",
+            "isCurrentRole": true,
+            "startDate": "2021-03-01",
+            "start": {
+                "year": 2021,
+                "month": 3
+            },
+            "end": {},
+            "highlights": [""]
+        },
+        {
+            "company": "The Hacker Collective",
+            "position": "Software Developer",
+            "website": "https://hackercollective.co/",
+            "location": "Malaysia",
+            "isCurrentRole": true,
+            "startDate": "2021-08-01",
+            "start": {
+                "year": 2021,
+                "month": 8
+            },
+            "end": {},
+            "highlights": [""]
+        },
+        {
+            "company": "Smart World Education Centre",
+            "position": "Math Instructor",
+            "website": "https://www.facebook.com/smartworldedu123",
+            "location": "Malaysia",
+            "isCurrentRole": false,
+            "startDate": "2020-03-01",
+            "start": {
+                "year": 2020,
+                "month": 3
+            },
+            "end": {
+                "year": 2022,
+                "month": 3
+            },
+            "highlights": [""]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Methodist Boys' Secondary School Kuala Lumpur",
+            "area": "",
+            "studyType": "SPM",
+            "startDate": "2015-01-02",
+            "start": {
+                "year": 2015,
+                "month": 1
+            },
+            "end": {
+                "year": 2019,
+                "month": 11
+            },
+            "description": "",
+            "activities": "",
+            "result": {
+                "A": 6,
+                "B": 4
+            }
+        }
+    ],
+    "languages": [
+        {
+            "language": "Chinese",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Malay",
+            "fluency": "Intermediate"
+        },
+        {
+            "language": "Thai",
+            "fluency": "Basic"
+        }
+    ]
+}

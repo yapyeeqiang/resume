@@ -1,0 +1,7 @@
+export { default as GitHubIcon } from './GitHubIcon.vue'
+export { default as LinkedInIcon } from './LinkedInIcon.vue'
+export { default as TwitterIcon } from './TwitterIcon.vue'
+export { default as InstagramIcon } from './InstagramIcon.vue'
+export { default as AvatarIcon } from './AvatarIcon.vue'
+export { default as ExternalLinkIcon } from './ExternalLinkIcon.vue'
+export { default as StarIcon } from './StarIcon.vue'
