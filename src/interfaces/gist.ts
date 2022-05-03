@@ -1,9 +1,4 @@
-import type { EducationRaw } from './education'
-import type { LanguageRaw } from './language'
-import type { PersonalRaw } from './personal'
-import type { ProjectRaw } from './project'
-import type { SkillRaw } from './skill'
-import type { WorkRaw } from './work'
+import type { PersonalRaw, EducationRaw, LanguageRaw, ProjectRaw, SkillRaw, WorkRaw } from '.'
 
 export interface GistRaw {
     basics: PersonalRaw

@@ -5,3 +5,8 @@ export interface SkillRaw {
     level: Level
     keywords: string[]
 }
+
+export interface SkillResult {
+    name: string
+    keywords: string
+}

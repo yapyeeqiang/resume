@@ -1,4 +1,4 @@
-import type { ShortDate } from './date'
+import type { ShortDate } from '.'
 
 interface Result {
     A?: number
@@ -15,9 +15,17 @@ export interface EducationRaw {
     studyType: string
     area: string
     description: string
-    activities: string
+    activities: string[]
     result: Result
     startDate: string
     start: ShortDate
     end: ShortDate
+}
+
+export interface EducationResult {
+    area: string
+    studyType: string
+    institution: string
+    duration: string
+    activities: string[]
 }

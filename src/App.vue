@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { computed, markRaw, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import SplitLayout from './layouts/SplitLayout.vue'
 import { GitHubIcon, LinkedInIcon, TwitterIcon, InstagramIcon, AvatarIcon } from './assets'
 import Section from './components/Section.vue'
 import ProjectCard from './components/ProjectCard.vue'
+import EducationCard from './components/EducationCard.vue'
+import WorkCard from './components/WorkCard.vue'
 import { getResumeData } from './api/gist'
-
-const name = ref('Yap Yee Qiang')
-const role = ref('Software Developer')
-const email = ref('yapyeeqiang@gmail.com')
-const mailTo = computed(() => `mailto:${email.value}`)
+import type { LanguageRaw, SkillResult, ProjectResult, ProfileResult, EducationResult, WorkResult } from './interfaces'
 
 const socialMediasMap = {
     GitHub: GitHubIcon,
@@ -19,68 +17,31 @@ const socialMediasMap = {
     'Personal Website': AvatarIcon,
 }
 
-const socialMedias = ref([
-    {
-        name: 'GitHub',
-        url: 'https://yeeqiang.me/github',
-    },
-    {
-        name: 'LinkedIn',
-        url: 'https://yeeqiang.me/linkedin',
-    },
-    {
-        name: 'Twitter',
-        url: 'https://yeeqiang.me/twitter',
-    },
-    {
-        name: 'Instagram',
-        url: 'https://yeeqiang.me/instagram',
-    },
-    {
-        name: 'Personal Website',
-        url: 'https://yeeqiang.me',
-    },
-])
-
-const projects = ref([
-    {
-        title: 'title',
-        description: 'project description',
-        githubURL: 'github url',
-        websiteURL: 'website url',
-        stars: 0,
-    },
-    {
-        title: 'title',
-        description: 'project description',
-        githubURL: 'github url',
-        websiteURL: 'website url',
-        stars: 0,
-    },
-    {
-        title: 'title',
-        description: 'project description project description project description project description',
-        githubURL: 'github url',
-        websiteURL: 'website url',
-        stars: 0,
-    },
-    {
-        title: 'title',
-        description: 'project description',
-        githubURL: 'github url',
-        websiteURL: 'website url',
-        stars: 0,
-    },
-])
+const name = ref('')
+const role = ref('')
+const email = ref('')
+const mailTo = computed(() => `mailto:${email.value}`)
+const about = ref('')
+const socialMedias = ref<ProfileResult[]>([])
+const projects = ref<ProjectResult[]>([])
+const languages = ref<LanguageRaw[]>([])
+const skills = ref<SkillResult[]>([])
+const educations = ref<EducationResult[]>([])
+const works = ref<WorkResult[]>([])
 
 onMounted(async () => {
-    const { personalInfo, projects: resumeProjects } = await getResumeData()
+    const { personalInfo, projects: resumeProjects, languages: myLanguages, skills: mySkills, educations: myEducations, works: myWorks } = await getResumeData()
 
     name.value = personalInfo.name
-    email.value = personalInfo.email
     role.value = personalInfo.role
+    email.value = personalInfo.email
+    about.value = personalInfo.about
     socialMedias.value = personalInfo.socialMedias
     projects.value = resumeProjects
+    languages.value = myLanguages
+    skills.value = mySkills
+    educations.value = myEducations
+    works.value = myWorks
 })
 </script>
 
@@ -107,14 +68,49 @@ onMounted(async () => {
         <template #primary>
             <Section title="About">
                 <div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus voluptatem saepe, reiciendis, eos illo ab ratione eum debitis, rerum facere natus repellendus ea sint! In facilis dolore laudantium ex illum!</p>
+                    <p>{{ about }}</p>
                 </div>
             </Section>
 
             <Section title="Projects">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-x-4 lg:gap-x-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div v-for="(project, index) in projects" :key="index">
                         <ProjectCard :project="project" />
+                    </div>
+                </div>
+            </Section>
+
+            <Section title="Work Experience">
+                <div class="space-y-8">
+                    <div v-for="work in works">
+                        <WorkCard :work="work" />
+                    </div>
+                </div>
+            </Section>
+
+            <Section title="Stacks">
+                <div class="grid grid-cols-[max-content_auto] gap-4">
+                    <template v-for="skill in skills">
+                        <h3 class="text-right font-bold">{{ skill.name }}</h3>
+
+                        <div>{{ skill.keywords }}</div>
+                    </template>
+                </div>
+            </Section>
+
+            <Section title="Education">
+                <div>
+                    <div v-for="education in educations">
+                        <EducationCard :education="education" />
+                    </div>
+                </div>
+            </Section>
+
+            <Section title="Languages">
+                <div>
+                    <div class="inline" v-for="(language, index) in languages">
+                        <span class="font-bold">{{ language.language }}</span> (<span>{{ language.fluency }}</span
+                        >){{ languages.length - 1 === index ? '' : ', ' }}
                     </div>
                 </div>
             </Section>

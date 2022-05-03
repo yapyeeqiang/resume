@@ -11,3 +11,12 @@ export interface WorkRaw {
     start: ShortDate
     end: ShortDate
 }
+
+export interface WorkResult {
+    name: string
+    website: string
+    role: string
+    duration: string
+    location: string
+    highlights: string[]
+}

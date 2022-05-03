@@ -4,7 +4,7 @@ interface ProfileRaw {
     url: string
 }
 
-interface ProfileResult {
+export interface ProfileResult {
     name: string
     url: string
 }
@@ -27,4 +27,5 @@ export interface PersonalResult {
     role: string
     email: string
     socialMedias: ProfileResult[]
+    about: string
 }

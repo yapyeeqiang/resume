@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { GitHubIcon, ExternalLinkIcon } from '@/assets'
-import type { ProjectResult } from '@/interfaces/project'
-import StarIcon from '../assets/StarIcon.vue'
+import type { ProjectResult } from '@/interfaces'
+import StarIcon from '@/assets/StarIcon.vue'
 
 defineProps<{
     project: ProjectResult
@@ -9,9 +9,9 @@ defineProps<{
 </script>
 
 <template>
-    <div class="p-4 rounded-lg">
+    <div class="rounded-lg">
         <div class="flex items-center space-x-2">
-            <h4 class="font-bold text-lg">{{ project.title }}</h4>
+            <h4 class="font-bold md:text-lg">{{ project.title }}</h4>
 
             <a class="text-gray-500 hover:text-gray-800 transition-all" :href="project.githubURL">
                 <GitHubIcon />
